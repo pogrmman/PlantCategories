@@ -271,14 +271,15 @@ function SECTION(plant, categories) {
   } else if (((plantCategories.includes('Native Cultivar') ^ plantCategories.includes('Texas Native')) & 
                plantCategories.includes('Sun Perennial')) ^ (plantCategories.includes('Graminoid') & !isShadeGrassy(genusName)) ^
               plantCategories.includes('Vine') ^ plantCategories.includes('Woody Perennial') ^
-              (plantCategories.includes('Shade Perennial') & plantCategories.includes('Groundcover'))) {
+              (plantCategories.includes('Shade Perennial') & plantCategories.includes('Groundcover')) ^
+              (plantCategories.includes('Fruit') & plantCategories.includes('3 gal & up'))) {
     return 'Section 3';
   } else if (plantCategories.includes('Shade Perennial') ^ isBamboo(genusName) ^ isShadeShrub(genusName) ^ 
              isShadeGrassy(genusName) ^ isCycad(genusName) ^ plantCategories.includes('Fern')) {
     return 'Section 4';
   } else if (plantCategories.includes('Shrub') ^ (plantCategories.includes('Tree') & plantCategories.includes('1 & 2 Gal') ^
              isBogPlant(genusName, speciesName) ^ isTurksAisle(genusName, speciesName) ^ isWoodySect5(genusName, speciesName) ^
-             genusName == 'Sedum' ^ genusName == 'Aloe')) {
+             genusName == 'Sedum' ^ genusName == 'Aloe' ^ genusName == 'Rubus')) {
     return 'Section 5';
   } else if (isXericSect2(genusName) ^ plantCategories.includes('Sun Perennial')) {
     return 'Section 2';
